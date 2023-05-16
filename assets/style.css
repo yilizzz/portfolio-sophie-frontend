@@ -1,0 +1,580 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/** end reset css**/
+body {
+	max-width: 1140px;
+	margin:auto;
+	font-family: 'Work Sans' ;
+	font-size: 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	text-align:center;
+}
+header {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	margin: 50px 0;
+}
+section {
+	margin: 50px 0;
+}
+
+h1{
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	font-family: 'Syne';
+	font-size: 22px;
+	font-weight: 800;
+	color: #B1663C
+}
+
+h1 > span {
+	font-family: 'Work Sans';
+	font-size:10px;
+	letter-spacing: 0.1em;
+}
+
+h2{
+	font-family: 'Syne';
+	font-weight: 700;
+	font-size: 30px;
+	color: #1D6154
+}
+nav ul {
+	display: flex;
+	align-items: center;
+	list-style-type: none;
+
+}
+nav li {
+	padding: 0 10px;
+	font-size: 1.2em;
+}
+
+li:hover {
+	color: #B1663C;
+}
+#introduction {
+	display: flex;
+	align-items: center;
+}
+#introduction figure {
+	flex: 1;
+	text-align:left;
+}
+#introduction img {
+	display: block;
+	width: 80%;
+	margin-bottom: 1em;
+}
+
+#introduction article {
+	flex: 1;
+	text-align:left;
+}
+#introduction h2 {
+	margin-bottom: 1em;
+	margin-top: 1em;
+}
+
+#introduction p {
+	margin-bottom: 0.5em;
+}
+
+#portfolio{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+#portfolio h2 {
+	text-align: center;
+	margin-bottom: 1em;
+}
+.categories{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	margin-bottom: 50px;
+}
+.categories button{
+	height: 37px;
+	border: 1px solid #1D6154;
+	background-color: white;
+	color:#1D6154;
+	border-radius: 60px;
+	font-family: 'Syne';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 19px;
+	text-align: center;
+	padding : 2em auto ;
+	margin-right: 10px;
+	cursor: pointer;
+}
+
+.gallery {
+	width: 100%;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-column-gap: 20px;
+	grid-row-gap: 20px;
+}
+
+.gallery img {
+	width: 100%;
+
+}
+#contact {
+	width: 50%;
+	margin: auto;
+}
+#contact > * {
+	text-align: center;
+
+}
+#contact h2{
+	margin-bottom: 20px;
+}
+#contact form {
+	text-align: left;
+	margin-top:30px;
+	display: flex;
+	flex-direction: column;
+}
+
+#contact input {
+	height: 50px;
+	font-size: 1.2em;
+	border: none;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+}
+#contact label {
+	margin: 2em 0 1em 0;
+}
+#contact textarea {
+	border: none;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+}
+
+input[type="submit"]{
+	font-family: 'Syne';
+	font-weight: 700;
+	color: white;
+	background-color: #1D6154;
+	margin : 2em auto ;
+	width: 180px;
+	text-align: center;
+	border-radius: 60px ;
+}
+footer{
+	width: 100%;
+}
+footer nav ul {
+	display: flex;
+	justify-content: flex-end;
+	margin: 2em auto;
+	
+}
+li{
+	cursor: pointer;
+}
+img{
+    object-fit: cover;
+}
+.mode{
+	width:100%;
+	margin: 0 auto;
+	height: 59px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: black;
+	font-family: Work Sans;
+	font-size: 16px;
+	font-weight: 400;
+	text-align: center; 
+	color:white;
+}
+.mode button{
+	background-color: white;
+	color: black;
+	width: 216px;
+	border-radius: 60px;
+	height: 38px;
+	font-family: Work Sans;
+	font-size: 14px;
+	font-weight: 500;
+	text-align: center;
+
+	margin-left: 20px;
+	cursor: pointer;
+}
+.mode i{
+	color:white;
+}
+.btnModify{
+	border: none;
+	cursor: pointer;
+	background-color: white;
+	font-family: 'Work Sans';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;	
+}
+#manage h2{
+	margin: auto 30px;
+}
+#manage{
+	display: flex;
+	flex-direction: row;
+	justify-content: baseline;
+	align-items: center;
+	height: 36px;
+	margin-bottom: 50px;
+}
+#manage i{
+	margin-right: 8px;
+}
+/* css for login.html */
+#login_body{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+}
+#login_body a{
+	text-decoration: none;
+	cursor: pointer;
+}
+#login_main{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 70%;
+	margin-top: 162px;
+}
+#login_main h1{
+	margin-bottom: 37px;
+}
+#login_main input{
+	width: 379px;
+	height: 51px;
+	border: none;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+	margin-bottom: 30px;
+}
+#login_main button{
+	width: 179px;
+	height: 36px;
+	background: #1D6154;
+	color:white;
+	border: none;
+	border-radius: 60px;
+	font-family: 'Syne';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 14px;
+	text-align: center;
+	margin: 0 auto;
+}
+#login_main a{
+	margin: 28px auto;
+	color: black;
+}
+form{
+	display: flex;
+	flex-direction: column;
+	text-align: start;
+}
+#login{
+	color: #1D6154;
+}
+
+#loginFooter{
+	margin-top: 379px;
+	margin-right: 57px;
+	margin-bottom: 20px;
+}
+/* CSS for modal */
+.modal, .addWork{
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	width: 630px;
+	padding: 32px 100px 0 100px;
+	min-height: 731px;
+	background-color: white;
+	border: 1px solid #ddd;
+	border-radius: 10px;
+	box-sizing: border-box;
+	position: fixed;
+	top:100px;
+  }
+
+  .modal h2{
+	font-family: 'Work Sans';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 26px;
+	color: black;
+  }
+  .modal{
+	z-index: 2;
+  }
+  .addWork {
+	z-index: 3;
+  }
+  .hidden {
+	display: none;
+  }
+  .close{
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	width: 100%;
+	cursor: pointer;
+  }
+  .overlay {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5);
+	backdrop-filter: blur(3px);
+	z-index: 1;
+  }
+  #works {
+	display: flex;
+	flex-direction: row;
+	flex-flow: row wrap;
+	width: 100%;
+	margin-bottom: 20px;
+  }
+  #works div{
+	width: 78px;
+	height: 104px;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	padding: 10px 3px;
+  }
+  #works .fa-up-down-left-right, #works .fa-trash{
+	position: absolute;
+	background-color: black;
+	color:white;
+	padding: 10px 5px;
+	border-radius: 2px;
+  }
+  #works .fa-up-down-left-right{
+	right: 40px;
+	top:16px;
+  }
+  #works .fa-trash{
+	right: 11px;
+	top:16px;
+	cursor: pointer;
+  }
+  .edit{
+	text-align: left;
+	background-color: white;
+	border: none;
+	padding-left: 0;
+  }
+  #line{
+	position: absolute;
+	bottom: 60px;
+	width: 420px;
+	padding-top: 38px;
+	border-top:1px solid #CCC;
+	display: flex;
+	flex-direction: column;
+	/* margin-top: 20px; */
+  }
+ 
+  #btnAdd{
+	width: 237;
+	height: 36px;
+	border: none;
+	border-radius: 60px;
+	padding: 10px 49px;
+	background-color: #1D6154;
+	color: white;
+	font-family: 'Syne';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 14px;
+	margin: 0 auto 23px auto;
+  }
+  #btnDeleteAll{
+	font-family: 'Syne';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	color:#D65353;
+	background-color: white;
+	border: none;
+  }
+  /* css for window add a new work */
+  #operation{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 100%;
+  }
+  #btnEsc, #btnAddClose{
+	cursor: pointer;
+  }
+  #upload_div{
+	box-sizing: border-box;
+	position: relative;
+	width: 420px;
+	height: 169px;
+	background-color: #E8F1F7;
+	border-radius: 3px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-top: 28px;
+  }
+ 
+  #show{
+	z-index: 4;
+	width: 173px;
+	height: 169px;
+	position: absolute; 
+	top: 0px; 
+	left: 124px;
+  }
+  #optionCtg, #title{
+	width: 420px;
+	height: 51px;
+	border: none;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+	margin-bottom: 30px;
+  }
+  #btn_upload:hover {
+	background-color: #1D6154;
+	color: white;
+	text-decoration: none;
+  }
+  #btn_upload
+  {
+	width: 170px;
+	height: 36px;
+	position: relative;
+   	text-decoration: none;
+   	line-height: 36px;
+    text-align: center;
+	background: #CBD6DC;
+	border-radius: 50px;
+	color:#306685;
+	cursor:default;
+  }
+  #upload_input{
+	position: absolute;
+	font-size: 50px;
+  	left: 0;
+  	top:0;
+  	opacity: 0;
+  }
+  #form_work h2{
+	font-family: 'Work Sans';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 26px;
+	color: black;
+	margin-bottom: 36px;
+  }
+ #form_work p{
+	font-family: 'Work Sans';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 10px;
+	margin-top: 10px;
+ }
+ #form_work label{
+	margin-top: 20px;
+	margin-bottom: 10px;
+ }
+ #line_valid{
+	border-top: 1px solid #B3B3B3;
+	height: 100px;
+	position: relative;
+ }
+ #valid_message{
+	color: red;
+ }
+#send{
+	width: 237px;
+	height: 36px;
+	position: absolute;
+	left: 50%; 
+	top: 50%;
+	margin-left: -119px;
+	margin-top: -18px;
+	background: #A7A7A7;
+	border-radius: 60px;
+	border: none;
+	color:white;
+}
+ 
