@@ -1,3 +1,5 @@
+import { API_ROUTES } from './constants.js';
+
 function ListenerLoginCheck() {
     const formLogin = document.querySelector("#logData");
     formLogin.addEventListener("submit", async function (event) {
@@ -7,7 +9,8 @@ function ListenerLoginCheck() {
             password: event.target.querySelector("[name=password]").value
         };
         const chargeUtile = JSON.stringify(logData);
-        const response = await fetch("http://localhost:5678/api/users/login", {
+        //const response = await fetch("http://localhost:5678/api/users/login", {
+        const response = await fetch(API_ROUTES.SIGN_IN,{
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: chargeUtile

@@ -1,3 +1,4 @@
+import { API_ROUTES } from './constants.js';
 //////////////gardian, if it's logged in, show the modify fonction, otherwise hide the button
 
 if(sessionStorage.getItem('token') === "none"  || sessionStorage.getItem('token') === null ){
@@ -30,8 +31,10 @@ linkLogout.addEventListener("click", function () {
 
 /////////////////////////////////////////////////////////////Récupération tous les works 
 
-var reponse = await fetch('http://localhost:5678/api/works/');
+//var reponse = await fetch('http://localhost:5678/api/works/');
+var reponse = await fetch(`${API_ROUTES.WORKS}`);
 var allWorks = await reponse.json();
+
 
 //////////////////////////////////////////////////generate the elements to show all the works
 function generateGallery(works) {
@@ -63,7 +66,8 @@ generateGallery(allWorks);
 ////////////////////////////////////////////////////////button publier les changements
 const btnUpdate = document.querySelector("#btn_update");
 btnUpdate.addEventListener("click", async function(e){
-    var reponse = await fetch('http://localhost:5678/api/works/');
+    var reponse = await fetch(`${API_ROUTES.WORKS}`);
+    //var reponse = await fetch('http://localhost:5678/api/works/');
     allWorks = await reponse.json();
     generateGallery(allWorks);
 });
@@ -163,7 +167,7 @@ delFunc.addEventListener("click", async function(event){
     if(tagTrash){
         let confirmDel = confirm("Êtes-vous sûr de supprimer cette photo?");
         if(confirmDel==true){
-            const res = await fetch("http://localhost:5678/api/works/"+id,{
+            const res = await fetch(`${API_ROUTES.WORKS}/${id}`,{
                 method:"DELETE",
                 headers:{
                     'Authorization': 'Bearer ' + sessionStorage.getItem("token")
@@ -214,7 +218,7 @@ delAll.addEventListener("click",async function(){
     let res = confirm("Êtes-vous sûr de supprimer tous?");
     if(res==true){
         allWorks.forEach(async (element)=>{
-            const res = await fetch("http://localhost:5678/api/works/"+parseInt(element.id),{
+            const res = await fetch(`${API_ROUTES.WORKS}/${parseInt(element.id)}`,{
                 method:"DELETE",
                 headers:{
                     'Authorization': 'Bearer ' + sessionStorage.getItem("token")
@@ -230,7 +234,8 @@ var ctg = window.localStorage.getItem('ctg');
 var inputCount;
 if (ctg === null) {
     // Récupération des categories depuis l'API
-    const reponse = await fetch('http://localhost:5678/api/categories');
+    // const reponse = await fetch('http://localhost:5678/api/categories');
+    const reponse = await fetch(`${API_ROUTES.CATEGORY}`);
     ctg = await reponse.json();
     // Transformation des categories en JSON
     const valeurCtg = JSON.stringify(ctg);
@@ -282,7 +287,7 @@ document.getElementById('form_work').addEventListener("submit", async function (
     formData.append("image", document.querySelector("[name=file]").files[0]);
     formData.append("title", document.querySelector("[name=title]").value);
     formData.append("category", parseInt(document.querySelector("[name=optionCtg]").value));
-    const response = await fetch("http://localhost:5678/api/works", {
+    const response = await fetch(`${API_ROUTES.WORKS}`, {
           method: "post",
           headers: {'Authorization': 'Bearer ' + sessionStorage.getItem("token")},
           body: formData
